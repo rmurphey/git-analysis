@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Test and Commit",
+  "description": "Automatically runs tests and commits changes after any file modifications are completed",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      ".kiro/specs/**/*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A task has been completed with file changes. Please run any relevant tests to verify the changes work correctly, then commit the changes with an appropriate commit message describing what was modified."
+  }
+}
