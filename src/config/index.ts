@@ -64,7 +64,8 @@ export class ConfigManager {
         const configData = fs.readFileSync(this.configPath, 'utf8');
         const fileConfig = JSON.parse(configData);
         return { ...DEFAULT_CONFIG, ...fileConfig };
-      } catch (error) {
+      } catch {
+        // eslint-disable-next-line no-console
         console.warn(`Warning: Could not parse config file ${this.configPath}. Using defaults.`);
         return DEFAULT_CONFIG;
       }

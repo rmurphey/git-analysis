@@ -1,13 +1,11 @@
 import * as ts from 'typescript';
-import * as path from 'path';
 import * as fs from 'fs';
 import {
   ParsedFile,
   FunctionInfo,
   ClassInfo,
   MethodInfo,
-  PropertyInfo,
-  ExportInfo
+  PropertyInfo
 } from '../types/interfaces';
 
 /**
@@ -222,43 +220,43 @@ export class ASTParser {
    * Check if node has async modifier
    */
   private hasAsyncModifier(node: ts.Node): boolean {
-    const modifiersNode = node as any;
-    return modifiersNode.modifiers?.some((modifier: ts.Modifier) => modifier.kind === ts.SyntaxKind.AsyncKeyword) ?? false;
+    const modifiersNode = node as ts.HasModifiers;
+    return modifiersNode.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.AsyncKeyword) ?? false;
   }
 
   /**
    * Check if node has export modifier
    */
   private hasExportModifier(node: ts.Node): boolean {
-    const modifiersNode = node as any;
-    return modifiersNode.modifiers?.some((modifier: ts.Modifier) => modifier.kind === ts.SyntaxKind.ExportKeyword) ?? false;
+    const modifiersNode = node as ts.HasModifiers;
+    return modifiersNode.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.ExportKeyword) ?? false;
   }
 
   /**
    * Check if node has default modifier
    */
   private hasDefaultModifier(node: ts.Node): boolean {
-    const modifiersNode = node as any;
-    return modifiersNode.modifiers?.some((modifier: ts.Modifier) => modifier.kind === ts.SyntaxKind.DefaultKeyword) ?? false;
+    const modifiersNode = node as ts.HasModifiers;
+    return modifiersNode.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.DefaultKeyword) ?? false;
   }
 
   /**
    * Check if node has static modifier
    */
   private hasStaticModifier(node: ts.Node): boolean {
-    const modifiersNode = node as any;
-    return modifiersNode.modifiers?.some((modifier: ts.Modifier) => modifier.kind === ts.SyntaxKind.StaticKeyword) ?? false;
+    const modifiersNode = node as ts.HasModifiers;
+    return modifiersNode.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.StaticKeyword) ?? false;
   }
 
   /**
    * Get visibility of class member
    */
   private getVisibility(node: ts.Node): 'public' | 'private' | 'protected' {
-    const modifiersNode = node as any;
-    if (modifiersNode.modifiers?.some((modifier: ts.Modifier) => modifier.kind === ts.SyntaxKind.PrivateKeyword)) {
+    const modifiersNode = node as ts.HasModifiers;
+    if (modifiersNode.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.PrivateKeyword)) {
       return 'private';
     }
-    if (modifiersNode.modifiers?.some((modifier: ts.Modifier) => modifier.kind === ts.SyntaxKind.ProtectedKeyword)) {
+    if (modifiersNode.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.ProtectedKeyword)) {
       return 'protected';
     }
     return 'public';

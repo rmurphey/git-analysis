@@ -1,3 +1,8 @@
 {
-    "kiroAgent.configureMCP": "Disabled"
+    "kiroAgent.configureMCP": "Disabled",
+    "eslint.validate": ["typescript"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "typescript.preferences.includePackageJsonAutoImports": "on"
 }

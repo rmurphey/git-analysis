@@ -13,9 +13,9 @@ export interface Config {
 
 // Test stub generator interfaces
 export interface StubGenerator {
-  parseSourceFile(filePath: string): ParsedFile;
-  generateStub(parsedFile: ParsedFile): string;
-  createTestFile(sourceFile: string, outputPath: string): void;
+  parseSourceFile(_filePath: string): ParsedFile;
+  generateStub(_parsedFile: ParsedFile): string;
+  createTestFile(_sourceFile: string, _outputPath: string): void;
 }
 
 export interface ParsedFile {
@@ -119,7 +119,7 @@ export interface FileCoverage {
 export interface CLICommand {
   name: string;
   description: string;
-  execute(args: string[]): Promise<void>;
+  execute(_args: string[]): Promise<void>;
 }
 
 export interface CLIOptions {
@@ -133,13 +133,13 @@ export interface CLIOptions {
 
 // File watcher interfaces
 export interface FileWatcher {
-  watch(paths: string[], callback: (changedFiles: string[]) => void): void;
+  watch(_paths: string[], _callback: (_changedFiles: string[]) => void): void;
   stop(): void;
 }
 
 // Git integration interfaces
 export interface GitIntegration {
   getChangedFiles(): Promise<string[]>;
-  getAffectedTestFiles(changedFiles: string[]): Promise<string[]>;
+  getAffectedTestFiles(_changedFiles: string[]): Promise<string[]>;
   isGitRepository(): boolean;
 }
