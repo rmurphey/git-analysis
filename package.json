@@ -9,8 +9,10 @@
   },
   "scripts": {
     "build": "tsc",
+    "prebuild": "npm run lint",
     "dev": "tsc --watch",
     "test": "jest",
+    "pretest": "npm run lint",
     "start": "node dist/cli/index.js",
     "lint": "eslint 'src/**/*.{ts,tsx}' --max-warnings 0",
     "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
