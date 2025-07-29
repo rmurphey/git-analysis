@@ -22,6 +22,9 @@ When a user indicates they have completed a task from a Kiro specification, you 
    - Verify that the implementation meets the Kiro spec requirements
    - Check for any performance or security concerns
 
+4. **Mark the task completed**
+   - Edit tasks.md to check the checkbox next to the completed task.
+
 4. **Propose Commit Strategy**: If tests pass successfully:
    - Analyze the changes using `git status` and `git diff`
    - Craft a clear, descriptive commit message that references the Kiro task
