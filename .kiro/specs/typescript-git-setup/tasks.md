@@ -2,7 +2,7 @@
 
 **Note: This project already has Git repository, package.json, TypeScript config, Jest config, project structure, and dependencies installed. The remaining tasks focus on missing components.**
 
-- [ ] 1. Create comprehensive .gitignore file
+- [x] 1. Create comprehensive .gitignore file
   - Create .gitignore file using `node -e` command with TypeScript, Node.js, and IDE patterns
   - Include patterns for dist/, node_modules/, coverage/, and IDE files
   - Add and commit .gitignore to repository
@@ -22,7 +22,17 @@
   - Verify all development workflow scripts are properly configured
   - _Requirements: 4.3, 5.4_
 
-- [ ] 4. Verify and test complete setup
+- [ ] 4. Set up pre-commit hooks for tests
+  - Install husky for Git hooks management: `npm install --save-dev husky`
+  - Initialize husky: `npx husky install`
+  - Create pre-commit hook to run tests: `npx husky add .husky/pre-commit "npm test"`
+  - Add lint-staged for running linters on staged files: `npm install --save-dev lint-staged`
+  - Configure lint-staged in package.json to run ESLint and Prettier on staged TypeScript files
+  - Update pre-commit hook to use lint-staged: modify .husky/pre-commit to run `npx lint-staged`
+  - Test pre-commit hook by making a commit with staged changes
+  - _Requirements: 5.4_
+
+- [ ] 5. Verify and test complete setup
   - Run `npm run build` to verify TypeScript compilation works
   - Run `npm test` to verify Jest testing works
   - Run `npm run lint` to verify ESLint works
