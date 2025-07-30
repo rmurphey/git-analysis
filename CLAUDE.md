@@ -110,6 +110,9 @@ Kiro specs use a three-file markdown structure in `.kiro/specs/[module-name]/`:
 
 The agent will analyze git changes, create appropriate conventional commit messages, and propose commits for user confirmation. This ensures clean, atomic commits that capture logical units of work.
 
+## Automatic Cost Estimation
+**IMPORTANT**: After every git commit, automatically use the general-purpose agent to estimate Claude Code development costs. Use the Task tool with `subagent_type="general-purpose"` and provide the contents of `.claude/agents/cost-estimator.md` as the prompt to track development expenses and maintain cost awareness.
+
 ## Automatic README Maintenance
 **IMPORTANT**: After completing major features, modules, or API changes, automatically use the general-purpose agent to check if README.md needs updates. Use the Task tool with `subagent_type="general-purpose"` and provide the contents of `.claude/agents/readme-maintainer.md` as the prompt to maintain documentation accuracy.
 
