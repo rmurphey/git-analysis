@@ -179,6 +179,31 @@ The module uses configuration for caching and performance optimization:
 }
 ```
 
+## Development Agents
+
+This project includes automated development agents that streamline common workflows through Claude Code integration. These agents automatically trigger after code changes to maintain project quality and documentation.
+
+### Available Agents
+
+- **task-commit-proposer**: Automatically analyzes changes and proposes appropriate commit messages after completing development work
+- **readme-maintainer**: Keeps the README updated when significant code changes are made to ensure documentation stays current
+- **cost-estimator**: Tracks and estimates Claude Code usage costs after commits to help monitor AI assistance expenses
+
+### How It Works
+
+The agents are invoked automatically through instructions in `CLAUDE.md` that trigger the general-purpose agent with specialized prompts. Each agent has its own configuration file in `.claude/agents/` that defines its specific behavior and triggers.
+
+### Benefits
+
+- **Consistency**: Automated commit messages follow project conventions
+- **Documentation**: README stays synchronized with codebase changes
+- **Cost Awareness**: Track AI tool usage to manage development expenses
+- **Quality**: Reduces manual overhead while maintaining project standards
+
+### Agent Files
+
+Agent configurations are stored in `.claude/agents/` with prompts that define each agent's specialized behavior. This approach allows for easy customization and extension of automated workflows.
+
 ## Development
 
 ```bash
