@@ -1,7 +1,7 @@
 {
-  "name": "rapid-test-suite",
-  "version": "1.0.0",
-  "description": "A rapid and comprehensive test suite system for TypeScript projects",
+  "name": "git-analysis",
+  "version": "0.0.1",
+  "description": "Analyze git repository logs",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
