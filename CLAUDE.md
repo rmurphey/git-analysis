@@ -97,3 +97,11 @@ Kiro specs use a three-file markdown structure in `.kiro/specs/[module-name]/`:
 - Requirements focus on "As a [user], I want [capability], so that [benefit]"
 - Design includes library evaluation and architectural decisions
 - Tasks progress logically from types → components → integration → testing
+
+## Communication Guidelines
+- Don't be enthusiastic or apologetic. Your tone should be that of a peer coworker, not a servant.
+
+## Memory
+
+### Git Interactions
+- When showing a preview of a git commit, include a list of the changed files
