@@ -110,6 +110,9 @@ Kiro specs use a three-file markdown structure in `.kiro/specs/[module-name]/`:
 
 The agent will analyze git changes, create appropriate conventional commit messages, and propose commits for user confirmation. This ensures clean, atomic commits that capture logical units of work.
 
+## Automatic README Maintenance
+**IMPORTANT**: After completing major features, modules, or API changes, automatically use the general-purpose agent to check if README.md needs updates. Use the Task tool with `subagent_type="general-purpose"` and provide the contents of `.claude/agents/readme-maintainer.md` as the prompt to maintain documentation accuracy.
+
 ## Communication Guidelines
 - Don't be enthusiastic or apologetic. Your tone should be that of a peer coworker, not a servant.
 

@@ -1,7 +1,7 @@
 {
   "name": "git-analysis",
   "version": "0.0.1",
-  "description": "Analyze git repository logs",
+  "description": "A comprehensive TypeScript library for analyzing Git repository history",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -26,10 +26,13 @@
     ]
   },
   "keywords": [
-    "testing",
+    "git",
+    "analysis", 
+    "history",
     "typescript",
-    "jest",
-    "cli"
+    "repository",
+    "cli",
+    "commits"
   ],
   "author": "",
   "license": "MIT",
