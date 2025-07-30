@@ -98,6 +98,18 @@ Kiro specs use a three-file markdown structure in `.kiro/specs/[module-name]/`:
 - Design includes library evaluation and architectural decisions
 - Tasks progress logically from types → components → integration → testing
 
+## Automatic Commit Workflow
+**IMPORTANT**: After completing any substantial development work, automatically use the task-commit-proposer agent to propose commits. Use the Task tool with `subagent_type="task-commit-proposer"` when:
+
+- TodoWrite tasks are marked as "completed"
+- New files created or existing files substantially modified  
+- Test files added or updated
+- Bug fixes completed
+- Refactoring work finished
+- Any development milestone reached
+
+The agent will analyze git changes, create appropriate conventional commit messages, and propose commits for user confirmation. This ensures clean, atomic commits that capture logical units of work.
+
 ## Communication Guidelines
 - Don't be enthusiastic or apologetic. Your tone should be that of a peer coworker, not a servant.
 
